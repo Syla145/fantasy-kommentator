@@ -4,8 +4,6 @@
 
 const Sleeper = (() => {
   const BASE = "https://api.sleeper.app/v1";
-  const PLAYERS_CACHE_KEY = "fdc_players_cache_v1";
-  const PLAYERS_CACHE_MAX_AGE_MS = 24 * 60 * 60 * 1000; // 1 Tag
 
   async function getJson(url) {
     const res = await fetch(url);
@@ -17,6 +15,10 @@ const Sleeper = (() => {
     return getJson(`${BASE}/draft/${draftId}`);
   }
 
+  // Jeder Pick enthält bereits metadata.first_name/last_name/position/team,
+  // deshalb brauchen wir NICHT den riesigen /v1/players/nfl-Datensatz
+  // (der ist ohnehin nicht für direkte Browser-Aufrufe per CORS freigegeben
+  // und laut Sleeper nur für max. 1 Aufruf/Tag gedacht).
   async function getPicks(draftId) {
     return getJson(`${BASE}/draft/${draftId}/picks`);
   }
@@ -29,28 +31,6 @@ const Sleeper = (() => {
   async function getLeagueUsers(leagueId) {
     if (!leagueId) return [];
     return getJson(`${BASE}/league/${leagueId}/users`);
-  }
-
-  // Der vollständige Spieler-Datensatz ist mehrere MB groß und ändert sich
-  // selten -> im localStorage cachen statt bei jedem Laden neu zu ziehen.
-  async function getPlayers() {
-    const cached = localStorage.getItem(PLAYERS_CACHE_KEY);
-    if (cached) {
-      try {
-        const parsed = JSON.parse(cached);
-        if (Date.now() - parsed.fetchedAt < PLAYERS_CACHE_MAX_AGE_MS) {
-          return parsed.data;
-        }
-      } catch (e) {
-        // Cache kaputt -> einfach neu laden
-      }
-    }
-    const data = await getJson(`${BASE}/players/nfl`);
-    localStorage.setItem(
-      PLAYERS_CACHE_KEY,
-      JSON.stringify({ fetchedAt: Date.now(), data })
-    );
-    return data;
   }
 
   // Baut roster_id -> Anzeigename (Team- oder Owner-Name)
@@ -74,5 +54,5 @@ const Sleeper = (() => {
     return map;
   }
 
-  return { getDraft, getPicks, getLeagueRosters, getLeagueUsers, getPlayers, buildTeamNameMap };
+  return { getDraft, getPicks, getLeagueRosters, getLeagueUsers, buildTeamNameMap };
 })();
