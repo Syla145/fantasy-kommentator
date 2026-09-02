@@ -33,7 +33,9 @@ const Sleeper = (() => {
     return getJson(`${BASE}/league/${leagueId}/users`);
   }
 
-  // Baut roster_id -> Anzeigename (Team- oder Owner-Name)
+  // Baut eine Nachschlage-Map, die sowohl über roster_id als auch über
+  // owner_id (User-ID) auflöst - Mock-Drafts liefern oft nur die User-ID
+  // (picked_by) statt einer echten roster_id.
   async function buildTeamNameMap(leagueId) {
     const map = {};
     if (!leagueId) return map;
@@ -50,6 +52,7 @@ const Sleeper = (() => {
         (u && u.display_name) ||
         `Team ${r.roster_id}`;
       map[r.roster_id] = name;
+      if (r.owner_id) map[r.owner_id] = name; // Fallback-Schlüssel für Mock-Drafts
     });
     return map;
   }
