@@ -57,13 +57,52 @@ neue Liste mehr oder weniger als 199 Spieler enthält – dieser Wert steuert,
 ab welchem Pick ein "nicht in der Liste"-Spieler noch als `surprise_pick`
 zählt (danach sind fehlende Einträge einfach normale Spätpicks).
 
-### 3. Rivalitäten & Team-Bedarfe (optional)
+### 3. Roster-Bedarf (automatisch, kein Setup nötig)
 
-In `config.js`:
-- `rivalries`: roster_id -> roster_id des Rivalen (für den `rivalry_pick`-Trigger)
-- `rosterNeeds`: roster_id -> Liste benötigter Positionen (für `roster_need_filled`)
+`roster_need_filled` funktioniert jetzt vollautomatisch: Die App liest beim
+Start die Starter-Slots deiner Liga direkt aus den Sleeper-Draft-Settings
+(`slots_qb`, `slots_rb`, `slots_wr`, `slots_te`, `slots_flex` ...) und
+verfolgt während des Drafts live, welche Positionen jedes Team schon
+besetzt hat. Ein Pick gilt als "Bedarf gefüllt", wenn er eine noch offene
+Starter-Position schließt (inkl. Flex-Logik für RB/WR/TE).
 
-roster_ids bekommst du über `https://api.sleeper.app/v1/league/<leagueId>/rosters`.
+Kein manueller Eintrag mehr nötig – funktioniert für jede Liga-Größe und
+jedes Lineup-Format automatisch.
+
+### 4. Rivalitäten eintragen (optional, manuell)
+
+Rivalitäten lassen sich nicht automatisch ableiten – das musst du einmalig
+selbst in `config.js` eintragen. Damit du dafür nicht mühsam roster_ids
+heraussuchen musst: Wenn du die App zum ersten Mal startest und eine
+`leagueId` in `config.js` eingetragen hast, listet das Debug-Log unten auf
+der Seite automatisch alle Teams mit ihrer roster_id auf, z. B.:
+
+```
+roster_id 1 = "Team Mustermann"
+roster_id 4 = "Team Beispiel"
+```
+
+Diese IDs trägst du dann in `config.js` unter `rivalries` ein:
+
+```js
+rivalries: {
+  "1": "4",
+  "4": "1"
+}
+```
+
+### 5. Clock Pressure (automatisch, mit einer bekannten Einschränkung)
+
+`clock_pressure` berechnet jetzt korrekt, welches Team gerade an der Reihe
+ist – basierend auf Pick-Nummer, Team-Anzahl und Snake-Reihenfolge
+(`slot_to_roster_id` aus den Sleeper-Draft-Settings). Der Countdown selbst
+läuft lokal im Browser ab dem Zeitpunkt, an dem die App den letzten Pick
+erkannt hat.
+
+**Bekannte Einschränkung:** "3rd Round Reversal"-Drafts (bei denen die
+Snake-Reihenfolge in einer bestimmten Runde nochmal gedreht wird) werden
+nicht speziell behandelt. Für die meisten Standard-Snake-Drafts passt die
+Berechnung aber genau.
 
 ### 4. Lokal testen
 
@@ -95,14 +134,14 @@ als Nutzer-Geste und schaltet die Sprachausgabe frei.
 
 ## Bekannte Einschränkungen im aktuellen Grundgerüst
 
-- **clock_pressure** ist aktuell vereinfacht: Sleeper liefert im Draft-Objekt
-  keinen expliziten "wer ist gerade dran"-Wert für Snake-Drafts sehr zuverlässig
-  mit; der aktuelle Code nutzt `last_picked` als Näherung. Für eine robustere
-  Lösung müsste man `draft_order` + `slot_to_roster_id` + Pick-Reihenfolge
-  selbst durchrechnen, um pro Pick das genaue "on the clock"-Team zu bestimmen.
-- **roster_need_filled** erkennt Bedarf nur, wenn du ihn manuell in
-  `rosterNeeds` einträgst. Eine automatische Ableitung aus dem bisherigen
-  Kader (z. B. "Team hat noch keinen TE") wäre der nächste Ausbauschritt.
+- **clock_pressure** geht von einem normalen Snake-Draft aus. "3rd Round
+  Reversal" oder andere Sonderformate werden nicht separat behandelt (siehe
+  Abschnitt 5 oben).
+- Wenn du die Show mitten im Draft startest, lädt die App beim ersten
+  Poll-Zyklus alle bisherigen Picks still nach (kein Kommentar, kein Ton),
+  um Roster-Zähler und Position-Run-Historie korrekt zu initialisieren.
+  Erst danach wird live kommentiert – das kann beim allerersten Laden ein
+  bis zwei Sekunden dauern, ist aber normal.
 - Die Stimmqualität der Web Speech API hängt stark vom Browser/Betriebssystem
   ab (Chrome auf Desktop hat i. d. R. die meisten/besten deutschen Stimmen).
 
