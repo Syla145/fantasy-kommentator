@@ -30,18 +30,32 @@ der URL deiner Liga (`.../leagues/<leagueId>/...`).
 
 Beide Werte trägst du in `config.js` ein.
 
-### 2. ADP-Daten befüllen (optional, aber empfohlen)
+### 2. ADP-Daten befüllen (bereits erledigt)
 
-Ohne ADP-Daten funktionieren die Trigger `value_pick`, `reach_pick` und
-`star_player` nicht (sie werden einfach übersprungen, alles andere läuft trotzdem).
+`adp.json` ist bereits mit den Top 199 Spielern aus den FantasyCalc Redraft
+Rankings befüllt (Mapping `sleeperId -> overallRank`). Das deckt die
+Trigger `value_pick`, `reach_pick` und `star_player` für praktisch jeden
+Pick ab, der in einem Standard-Draft überhaupt relevant wird.
 
-So befüllst du `adp.json`:
-1. Eine ADP-Liste besorgen (z. B. von FantasyPros, als CSV/Tabelle exportierbar).
-2. Sleeper player_ids gibt es unter `https://api.sleeper.app/v1/players/nfl`
-   (großes JSON, im Browser mit Strg+F nach Spielernamen suchen).
-3. Ein Mapping `"player_id": adp_wert` in `adp.json` eintragen.
+**Wenn eine neue Saison beginnt oder sich die Werte stark ändern**, einfach
+eine aktuelle CSV mit den Spalten `sleeperId` und `overallRank` besorgen
+und dieses Python-Snippet erneut laufen lassen:
 
-Für den Prototypen reicht auch eine kleine Liste mit nur den Top 50-100 Spielern.
+```python
+import csv, json
+
+with open('neue_liste.csv', encoding='utf-8-sig') as f:
+    rows = list(csv.DictReader(f, delimiter=';'))
+
+adp = {r['sleeperId'].strip(): int(r['overallRank']) for r in rows}
+with open('adp.json', 'w', encoding='utf-8') as f:
+    json.dump(adp, f, ensure_ascii=False, indent=2)
+```
+
+Passe außerdem `thresholds.adpCoverageRange` in `config.js` an, falls die
+neue Liste mehr oder weniger als 199 Spieler enthält – dieser Wert steuert,
+ab welchem Pick ein "nicht in der Liste"-Spieler noch als `surprise_pick`
+zählt (danach sind fehlende Einträge einfach normale Spätpicks).
 
 ### 3. Rivalitäten & Team-Bedarfe (optional)
 
