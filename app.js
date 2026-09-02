@@ -5,7 +5,6 @@
 const App = (() => {
   let draftMeta = null;
   let teamNames = {};
-  let players = {};
   let adp = {};
   let seenPickIds = new Set();
   let recentPositions = []; // für position_run
@@ -93,10 +92,11 @@ const App = (() => {
   }
 
   function buildContext(pick) {
-    const player = players[pick.player_id] || {};
-    const playerName = player.full_name || `${player.first_name || ""} ${player.last_name || ""}`.trim() || "Unbekannter Spieler";
+    const meta = pick.metadata || {};
+    const playerName =
+      `${meta.first_name || ""} ${meta.last_name || ""}`.trim() || "Unbekannter Spieler";
     const team = teamNames[pick.roster_id] || pick.picked_by || `Team ${pick.roster_id}`;
-    const position = player.position || pick.metadata?.position || "?";
+    const position = meta.position || "?";
     const pickAdp = adp[pick.player_id];
     const rivalRosterId = CONFIG.rivalries[pick.roster_id];
     const rival = rivalRosterId ? teamNames[rivalRosterId] : null;
@@ -260,9 +260,6 @@ const App = (() => {
 
     await Templates.load("templates.json");
     await loadAdp();
-
-    players = await Sleeper.getPlayers();
-    log(`Spieler-Datenbank geladen (${Object.keys(players).length} Spieler).`);
 
     teamNames = await Sleeper.buildTeamNameMap(CONFIG.leagueId);
     if (Object.keys(teamNames).length > 0) {
