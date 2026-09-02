@@ -60,6 +60,16 @@ const App = (() => {
     if (settings.slots_super_flex) flexSlots += settings.slots_super_flex;
   }
 
+  // Manche Draft-Typen (v.a. Mock-Drafts) liefern kein roster_id, sondern
+  // nur picked_by (die User-ID). Dieser Key dient als stabiler Ersatz,
+  // damit Team-Zuordnung/roster_need-Tracking trotzdem funktionieren.
+  function getTeamKey(pick) {
+    if (pick.roster_id !== null && pick.roster_id !== undefined) return pick.roster_id;
+    if (pick.picked_by) return pick.picked_by;
+    if (pick.draft_slot !== undefined) return `slot_${pick.draft_slot}`;
+    return "unknown";
+  }
+
   function ensureRosterCounts(rosterId) {
     if (!rosterPositionCounts[rosterId]) {
       rosterPositionCounts[rosterId] = { QB: 0, RB: 0, WR: 0, TE: 0, DEF: 0, K: 0 };
@@ -95,13 +105,15 @@ const App = (() => {
     const meta = pick.metadata || {};
     const playerName =
       `${meta.first_name || ""} ${meta.last_name || ""}`.trim() || "Unbekannter Spieler";
-    const team = teamNames[pick.roster_id] || pick.picked_by || `Team ${pick.roster_id}`;
+    const teamKey = getTeamKey(pick);
+    const team = teamNames[teamKey] || `Team ${teamKey}`;
     const position = meta.position || "?";
     const pickAdp = adp[pick.player_id];
-    const rivalRosterId = CONFIG.rivalries[pick.roster_id];
-    const rival = rivalRosterId ? teamNames[rivalRosterId] : null;
+    const rivalKey = CONFIG.rivalries[teamKey];
+    const rival = rivalKey ? teamNames[rivalKey] : null;
 
     return {
+      teamKey,
       team,
       player: playerName,
       position,
@@ -125,10 +137,16 @@ const App = (() => {
       if (pickAdp <= th.starPlayerAdp) triggers.push("star_player");
       if (pickAdp - pick.pick_no >= th.valuePickDiff) triggers.push("value_pick");
       if (pick.pick_no - pickAdp >= th.reachPickDiff) triggers.push("reach_pick");
+      // Wichtig: Wenn ADP-Daten vorhanden sind, aber keine der obigen
+      // Schwellen greift, ist das ein völlig normaler, "planmäßiger" Pick -
+      // KEIN surprise_pick! Surprise ist nur, wenn der Spieler gar nicht in
+      // unseren Daten auftaucht (siehe else-Zweig unten).
     } else if (
       Object.keys(adp).length > 0 &&
       pick.pick_no <= th.adpCoverageRange
     ) {
+      // Spieler fehlt komplett in der ADP-Liste, obwohl der Pick noch im
+      // abgedeckten Bereich liegt -> das ist eine echte Überraschung.
       triggers.push("surprise_pick");
     }
 
@@ -144,14 +162,19 @@ const App = (() => {
 
     // Roster-Bedarf: automatisch aus den Draft-Settings + bisherigen Picks
     // des Teams abgeleitet, kein manueller Eintrag mehr nötig.
-    if (starterRequirements[context.position] !== undefined && fillsRosterNeed(pick.roster_id, context.position)) {
+    if (starterRequirements[context.position] !== undefined && fillsRosterNeed(context.teamKey, context.position)) {
       triggers.push("roster_need_filled");
     }
 
     // Rivalität (weiterhin manuell in config.js gepflegt)
     if (context.rival) triggers.push("rivalry_pick");
 
-    return triggers.length > 0 ? triggers : ["surprise_pick"];
+    // WICHTIG: kein erzwungener Fallback mehr auf surprise_pick.
+    // Ein "normaler" Pick ohne auffälligen Trigger bekommt einfach keinen
+    // Kommentar - das ist realistischer als jeden Pick zu kommentieren,
+    // und verhindert, dass planmäßige Picks fälschlich als "Überraschung"
+    // angesagt werden.
+    return triggers;
   }
 
   function announcePick(pick, options) {
@@ -160,9 +183,16 @@ const App = (() => {
     const triggers = detectTriggers(pick, context);
 
     // Roster-Zähler erst NACH der Bedarfsprüfung hochzählen
-    recordRosterPick(pick.roster_id, context.position);
+    recordRosterPick(context.teamKey, context.position);
 
     if (silent) return; // beim Nachladen bestehender Picks nicht sprechen
+
+    if (triggers.length === 0) {
+      // Normaler, planmäßiger Pick ohne auffälligen Trigger - bewusst kein
+      // Kommentar, damit nicht jeder Pick künstlich hochgejazzt wird.
+      log(`Pick ${pick.pick_no}: ${context.player} (${context.position}) -> ${context.team} | kein Kommentar (unauffälliger Pick)`);
+      return;
+    }
 
     let trigger = triggers.includes("first_pick")
       ? "first_pick"
@@ -261,19 +291,34 @@ const App = (() => {
     await Templates.load("templates.json");
     await loadAdp();
 
-    teamNames = await Sleeper.buildTeamNameMap(CONFIG.leagueId);
-    if (Object.keys(teamNames).length > 0) {
-      log("Team-Übersicht für rivalries/rosterNeeds in config.js:");
-      Object.entries(teamNames).forEach(([rosterId, name]) => {
-        log(`  roster_id ${rosterId} = "${name}"`);
-      });
+    try {
+      teamNames = await Sleeper.buildTeamNameMap(CONFIG.leagueId);
+      if (Object.keys(teamNames).length > 0) {
+        log("Team-Übersicht für rivalries/rosterNeeds in config.js:");
+        Object.entries(teamNames).forEach(([rosterId, name]) => {
+          log(`  roster_id ${rosterId} = "${name}"`);
+        });
+      }
+    } catch (e) {
+      // Team-Namen sind ein "nice to have" - wenn dieser Aufruf fehlschlägt
+      // (z. B. kurzzeitiger Sleeper-Ausfall, Adblocker, Netzwerkproblem),
+      // soll die Show trotzdem starten. Es werden dann einfach "Team <roster_id>"
+      // statt echter Teamnamen angesagt.
+      log(`Team-Namen konnten nicht geladen werden (${e.message}). Show läuft trotzdem, nur mit "Team <roster_id>" statt echter Namen.`);
+      teamNames = {};
     }
 
-    draftMeta = await Sleeper.getDraft(CONFIG.draftId);
-    if (draftMeta.settings && draftMeta.settings.teams && draftMeta.settings.rounds) {
-      totalPicks = draftMeta.settings.teams * draftMeta.settings.rounds;
+    try {
+      draftMeta = await Sleeper.getDraft(CONFIG.draftId);
+      if (draftMeta.settings && draftMeta.settings.teams && draftMeta.settings.rounds) {
+        totalPicks = draftMeta.settings.teams * draftMeta.settings.rounds;
+      }
+      if (draftMeta.settings) buildStarterRequirements(draftMeta.settings);
+    } catch (e) {
+      // Ohne Draft-Metadaten funktionieren clock_pressure und last_pick nicht,
+      // aber die Kernshow (Picks kommentieren) läuft trotzdem weiter.
+      log(`Draft-Metadaten konnten nicht geladen werden (${e.message}). clock_pressure/last_pick sind deaktiviert, Rest läuft normal.`);
     }
-    if (draftMeta.settings) buildStarterRequirements(draftMeta.settings);
 
     log("Setup fertig. Lade bestehende Picks (still, ohne Kommentar)...");
 
