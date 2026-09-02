@@ -72,8 +72,13 @@ const App = (() => {
       if (pickAdp <= th.starPlayerAdp) triggers.push("star_player");
       if (pickAdp - pick.pick_no >= th.valuePickDiff) triggers.push("value_pick");
       if (pick.pick_no - pickAdp >= th.reachPickDiff) triggers.push("reach_pick");
-    } else if (Object.keys(adp).length > 0) {
-      // Spieler ist nicht in der ADP-Liste, obwohl wir Daten haben -> ungewöhnlich
+    } else if (
+      Object.keys(adp).length > 0 &&
+      pick.pick_no <= th.adpCoverageRange
+    ) {
+      // Spieler fehlt in der ADP-Liste, obwohl der Pick noch im Bereich liegt,
+      // in dem die Liste eigentlich Spieler abdeckt -> echte Überraschung.
+      // Späte Picks jenseits der Liste sind dagegen normal, kein surprise_pick.
       triggers.push("surprise_pick");
     }
 
