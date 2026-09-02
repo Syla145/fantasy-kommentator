@@ -144,6 +144,12 @@ als Nutzer-Geste und schaltet die Sprachausgabe frei.
   bis zwei Sekunden dauern, ist aber normal.
 - Die Stimmqualität der Web Speech API hängt stark vom Browser/Betriebssystem
   ab (Chrome auf Desktop hat i. d. R. die meisten/besten deutschen Stimmen).
+- Spielername und Position kommen direkt aus den Pick-Metadaten von Sleeper
+  (`pick.metadata`), nicht aus dem großen `/v1/players/nfl`-Datensatz. Dieser
+  ist absichtlich nicht eingebunden: Sleeper gibt selbst an, ihn höchstens
+  einmal pro Tag abzurufen, und die direkte Browser-Anfrage schlägt wegen
+  fehlender CORS-Freigabe ohnehin fehl. Die Pick-Metadaten reichen für alle
+  Trigger in diesem Projekt völlig aus.
 
 ## Nächste Ausbaustufen (Ideen)
 
