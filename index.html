@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Fantasy Draft Channel (DIY)</title>
-<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="style.css?v=2" />
 </head>
 <body>
   <header>
@@ -27,11 +27,12 @@
     </section>
   </main>
 
-  <!-- Reihenfolge wichtig: config vor allem anderen, App zuletzt -->
-  <script src="config.js"></script>
-  <script src="sleeper.js"></script>
-  <script src="templates.js"></script>
-  <script src="speech.js"></script>
-  <script src="app.js"></script>
+  <!-- ?v=2 als Cache-Buster, damit GitHub Pages/Browser die neuen JS-Dateien
+       garantiert neu laden und nicht eine gecachte alte Version verwenden -->
+  <script src="config.js?v=2"></script>
+  <script src="sleeper.js?v=2"></script>
+  <script src="templates.js?v=2"></script>
+  <script src="speech.js?v=2"></script>
+  <script src="app.js?v=2"></script>
 </body>
 </html>
