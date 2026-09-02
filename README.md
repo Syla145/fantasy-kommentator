@@ -150,6 +150,16 @@ als Nutzer-Geste und schaltet die Sprachausgabe frei.
   einmal pro Tag abzurufen, und die direkte Browser-Anfrage schlägt wegen
   fehlender CORS-Freigabe ohnehin fehl. Die Pick-Metadaten reichen für alle
   Trigger in diesem Projekt völlig aus.
+- **Nicht jeder Pick bekommt einen Kommentar.** Das ist Absicht: Ein Pick,
+  der genau nach Plan läuft (keine besondere ADP-Abweichung, keine offene
+  Starter-Lücke, kein Run, keine Rivalität), löst bewusst keinen Trigger
+  aus. Alles zu kommentieren würde jeden Pick künstlich zur "Überraschung"
+  aufblasen. Im Debug-Log siehst du trotzdem jeden Pick, nur ohne
+  Sprachausgabe.
+- **Mock-Drafts liefern oft keine `roster_id`**, nur `picked_by` (User-ID).
+  Die App fängt das ab (`getTeamKey` in `app.js`) und nutzt dann die
+  User-ID als Ersatz-Schlüssel für Team-Zuordnung und Roster-Bedarf. Echte
+  Liga-Drafts sind davon nicht betroffen.
 
 ## Nächste Ausbaustufen (Ideen)
 
