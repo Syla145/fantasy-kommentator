@@ -25,19 +25,20 @@ const CONFIG = {
   },
  
   // Rivalitäten: roster_id (aus Sleeper) -> roster_id des Rivalen
-  // roster_id bekommst du über /v1/league/{leagueId}/rosters
+  // roster_id + Teamname bekommst du bequem über die Konsolen-Ausgabe,
+  // die die App beim Start macht (siehe README, Abschnitt "Rivalitäten
+  // eintragen") oder direkt über /v1/league/{leagueId}/rosters.
   // Beispiel: { "1": "4", "4": "1" }  (Team 1 und Team 4 sind Rivalen)
   rivalries: {
     // "1": "4",
     // "4": "1"
   },
  
-  // Manuelle Team-Bedürfnisse (optional). roster_id -> Array benötigter Positionen.
-  // Wenn leer/nicht gesetzt, wird roster_need_filled einfach nie ausgelöst.
-  rosterNeeds: {
-    // "1": ["RB", "TE"],
-    // "2": ["WR"]
-  },
+  // roster_need_filled läuft jetzt automatisch: die App liest die
+  // Starter-Anforderungen direkt aus den Sleeper-Draft-Settings
+  // (slots_qb, slots_rb, slots_wr, slots_te, slots_flex ...) und erkennt
+  // selbst, wenn ein Pick eine noch offene Starter-Position schließt.
+  // Kein manueller Eintrag mehr nötig.
  
   // Stimmen-Einstellungen für die beiden Hosts (Web Speech API)
   voices: {
