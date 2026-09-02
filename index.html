@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fantasy Draft Channel (DIY)</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🏈 Fantasy Draft Channel</h1>
+    <p class="subtitle">Deine eigene Live-Draft-Show</p>
+  </header>
+
+  <main>
+    <button id="startBtn" onclick="App.start()">Show starten</button>
+    <button onclick="App.stop()">Show stoppen</button>
+
+    <section>
+      <h2>Live-Kommentar</h2>
+      <div id="transcript" class="transcript"></div>
+    </section>
+
+    <section>
+      <h2>Debug-Log</h2>
+      <div id="log" class="log"></div>
+    </section>
+  </main>
+
+  <!-- Reihenfolge wichtig: config vor allem anderen, App zuletzt -->
+  <script src="config.js"></script>
+  <script src="sleeper.js"></script>
+  <script src="templates.js"></script>
+  <script src="speech.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

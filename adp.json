@@ -1,0 +1,6 @@
+{
+  "_readme": "Mapping von Sleeper player_id -> ADP-Wert (Zahl). Sleeper player_id findest du z.B. indem du im Browser https://api.sleeper.app/v1/players/nfl aufrufst und nach dem Spielernamen suchst, oder über eine ADP-Quelle wie FantasyPros, die player_ids oft nicht direkt mitliefert - dann per Name matchen (siehe README, Abschnitt 'ADP-Daten befüllen'). Diese Datei ist nur ein Platzhalter mit Beispiel-Einträgen.",
+  "4046": 1,
+  "4881": 2,
+  "6794": 3
+}

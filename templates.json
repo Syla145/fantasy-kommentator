@@ -1,0 +1,302 @@
+{
+"value_pick": {
+"kevin": [
+"{team} bekommt {player} an Pick {pick_number}. Bei einem ADP von {adp} ist das weniger Draftkunst als ein Geschenk der Konkurrenz.",
+"{player} fällt bis zu {team} durch. Irgendwann musste bei ADP {adp} ja jemand aufpassen.",
+"Pick {pick_number}: {player} zu {team}. Der Rest der Liga darf sich später gern fragen, warum das so lange gedauert hat.",
+"{team} wartet bis Runde {round} und kassiert {player}. Geduld zahlt sich offenbar doch aus.",
+"Mit {player} an Pick {pick_number} findet {team} tatsächlich Value. Ich überprüfe sicherheitshalber noch mal, ob wir im richtigen Draft sind.",
+"ADP {adp}, gezogen an {pick_number}: {player} ist für {team} ein ziemlich sauberer Diebstahl.",
+"{team} musste hier nicht kreativ werden. {player} lag einfach viel zu lange herum.",
+"Da ist der Value-Pick: {player} geht in Runde {round} zu {team}. Selbst ich finde wenig zu meckern.",
+"{player} war laut ADP {adp} längst fällig. {team} sagt danke und nimmt ihn an Pick {pick_number}.",
+"Manchmal besteht gutes Draften nur darin, die Fehler der anderen einzusammeln. {team} macht genau das mit {player}.",
+"{team} bekommt auf {position} mit {player} erstaunlich viel Wert für Pick {pick_number}. Das war fast schon zu einfach.",
+"Für {player} musste {team} offenbar nur warten, bis alle anderen fertig gedacht hatten. An Pick {pick_number} ein starker Deal."
+],
+"jeremy": [
+"Das fühlt sich richtig gut für {team} an! {player} kommt erst an Pick {pick_number}, obwohl sein ADP bei {adp} liegt.",
+"Was für eine Gelegenheit für {team}! Mit {player} in Runde {round} bekommt das Team richtig starken Value.",
+"{player} war noch da, und {team} greift zu! Bei einem ADP von {adp} kann man mit diesem Pick wirklich zufrieden sein.",
+"Da hat sich das Warten gelohnt! {team} holt {player} an Pick {pick_number} und verstärkt sich auf {position}.",
+"Ich mag diesen Pick für {team} sehr. {player} so deutlich hinter seinem ADP {adp} zu bekommen, ist ein schöner Erfolg!",
+"Manchmal fällt einem im Draft genau der richtige Spieler in den Schoß. Für {team} könnte {player} genau so ein Fall sein!",
+"Runde {round} bringt {team} einen echten Bonus: {player} ist noch verfügbar und landet jetzt im Kader.",
+"Das ist einer dieser Picks, bei denen die Fans von {team} sofort lächeln dürfen. {player} an {pick_number} sieht richtig gut aus!",
+"Wie konnte {player} so lange verfügbar bleiben? {team} wird es egal sein und freut sich über den starken Value.",
+"Auf {position} bekommt {team} mit {player} eine spannende Verstärkung. Und das erst an Pick {pick_number}!",
+"Da stimmt das Preis-Leistungs-Verhältnis! {player} geht deutlich später als ADP {adp} zu {team}.",
+"{team} bleibt geduldig und wird belohnt. {player} in Runde {round} könnte am Ende einer der schönsten Picks dieses Drafts sein!"
+]
+},
+"reach_pick": {
+"kevin": [
+"{team} nimmt {player} schon an Pick {pick_number}, bei einem ADP von {adp}. Mutig ist ein Wort dafür.",
+"Oh, {player} jetzt schon? {team} hat offenbar beschlossen, den ADP komplett als Dekoration zu behandeln.",
+"Pick {pick_number} für {player}. Wenn {team} ihn unbedingt wollte, bestand offensichtlich keine Gefahr, zu lange zu warten.",
+"{team} greift in Runde {round} nach {player}. Sehr weit nach vorne, um genau zu sein.",
+"{player} hatte ADP {adp}, aber {team} sagt: Warum warten, wenn man auch sofort nervös werden kann?",
+"Das Board sagt später, {team} sagt jetzt. {player} ist an Pick {pick_number} definitiv ein Reach.",
+"Auf {position} wollte {team} offenbar keinerlei Risiko eingehen. {player} kommt deutlich früher als erwartet.",
+"Da verlässt {team} die Konsensspur mit Anlauf. {player} an {pick_number} wird Gesprächsstoff liefern.",
+"Vielleicht weiß {team} bei {player} etwas, das der Rest der Liga nicht weiß. Bei ADP {adp} wäre das jedenfalls hilfreich.",
+"Runde {round}, und {team} zieht bereits {player}. Das nennt man entweder Überzeugung oder Ungeduld.",
+"{player} ist vom Board, lange bevor sein ADP {adp} das vermuten ließ. {team} setzt hier ein ziemlich großes Ausrufezeichen.",
+"An Pick {pick_number} hätte {team} viele Wege nehmen können. Man entschied sich für den direkten Sprung zu {player}."
+],
+"jeremy": [
+"{team} will {player} unbedingt und wartet nicht länger! Pick {pick_number} liegt zwar vor ADP {adp}, aber manchmal muss man seinem Board vertrauen.",
+"Das ist ein selbstbewusster Pick von {team}! {player} kommt früher als erwartet, doch offensichtlich gab es hier eine klare Überzeugung.",
+"Wow, {player} schon in Runde {round}! Ich bin gespannt, was {team} in ihm sieht und ob sich der Mut auszahlt.",
+"{team} geht auf Nummer sicher und holt {player} an Pick {pick_number}. Wer seinen Spieler gefunden hat, muss manchmal einfach zugreifen!",
+"Der ADP sagt {adp}, aber {team} hatte andere Pläne. {player} ist jetzt da, wo das Team ihn haben wollte!",
+"Das ist definitiv früher als erwartet für {player}. Aber vielleicht sehen wir hier am Ende einen Pick, bei dem {team} genau richtig lag!",
+"Auf {position} setzt {team} früh ein Zeichen und entscheidet sich für {player}. Eine spannende Wahl!",
+"Keine Lust auf Risiko bei {team}: {player} wird an {pick_number} eingesammelt, bevor jemand anderes die Chance bekommt.",
+"Hier folgt {team} ganz klar dem eigenen Draftboard. {player} liegt über dem erwarteten Bereich, aber Überzeugung gehört zum Draft dazu!",
+"Mit {player} überrascht {team} mich ein bisschen. Jetzt bin ich wirklich neugierig, wie sich dieser frühe Pick entwickelt!",
+"Runde {round} bringt einen echten Statement-Pick von {team}. {player} war laut ADP {adp} noch nicht dran, aber das spielt jetzt keine Rolle mehr.",
+"Vielleicht hätte {player} später noch verfügbar sein können, doch {team} wollte ihn jetzt. Ich liebe zumindest die Entschlossenheit!"
+]
+},
+"position_run": {
+"kevin": [
+"Und noch ein {position}: {player} geht zu {team}. Offenbar hat die Liga kollektiv beschlossen, dass jetzt Panikzeit ist.",
+"{player} setzt den Run auf {position} fort. Wer noch einen braucht, dürfte langsam nervös auf sein Board schauen.",
+"Schon wieder {position}. {team} nimmt {player} und hält die Positions-Lawine am Rollen.",
+"Der Run ist offiziell: {player} ist der nächste {position}, der verschwindet. Viel Spaß beim Warten, liebe Konkurrenz.",
+"{team} springt mit {player} auf den {position}-Zug auf. Wenigstens ist noch niemand vom Bahnsteig gefallen.",
+"Noch ein {position} vom Board, diesmal {player} an Pick {pick_number}. Subtil ist dieser Draftabschnitt jedenfalls nicht.",
+"Runde {round} entwickelt sich zur {position}-Sammelstelle. {team} macht mit {player} konsequent weiter.",
+"Wer dachte, der Run auf {position} sei vorbei, bekommt von {team} und {player} die passende Antwort.",
+"{player} geht zu {team}, und damit wird aus einem Trend langsam eine Fluchtbewegung auf {position}.",
+"Die Liga kann offenbar gerade nur noch eine Position buchstabieren: {position}. {team} nimmt als Nächstes {player}.",
+"An Pick {pick_number} fällt mit {player} der nächste {position}. Wer hier Bedarf hat, sollte seinen Plan B schon mal entstauben.",
+"{team} folgt dem Herdentrieb und zieht {player} auf {position}. Manchmal ist FOMO eben auch eine Draftstrategie."
+],
+"jeremy": [
+"Da kommt schon der nächste {position}! {team} schnappt sich {player}, und dieser Positions-Run wird richtig spannend.",
+"Jetzt geht es Schlag auf Schlag auf {position}! Mit {player} steigt auch {team} in den Run ein.",
+"Wow, schon wieder ein {position} vom Board! {player} landet bei {team}, und die anderen Manager müssen jetzt gut überlegen.",
+"{team} entscheidet sich für {player}, und damit geht die Serie auf {position} weiter. Wer wartet hier noch ab?",
+"Der Run auf {position} nimmt richtig Fahrt auf! Diesmal freut sich {team} über {player}.",
+"Noch ein Name verschwindet auf {position}: {player} geht an Pick {pick_number} zu {team}. Jetzt wird die Auswahl langsam kleiner!",
+"Runde {round} gehört bisher ganz klar den {position}-Spielern. {team} macht mit {player} direkt weiter!",
+"Das ist jetzt definitiv ein Positions-Run! {team} sichert sich {player}, bevor die Optionen auf {position} noch knapper werden.",
+"Alle schauen plötzlich auf {position}, und {team} reagiert mit {player}. Ich bin gespannt, wer als Nächstes mitzieht!",
+"{player} ist der nächste {position}, der vom Board geht. Für {team} könnte das genau der richtige Moment gewesen sein!",
+"Man spürt richtig, wie der Druck auf {position} steigt. {team} wartet nicht länger und nimmt {player} an Pick {pick_number}.",
+"Dieser Draft hat gerade ein klares Lieblingsthema: {position}! {team} holt {player}, und der Run geht munter weiter."
+]
+},
+"roster_need_filled": {
+"kevin": [
+"Endlich besetzt {team} mit {player} die offene Baustelle auf {position}.",
+"Diese Lücke war kaum zu übersehen, jetzt bringt {player} Hilfe auf {position}.",
+"{player} stopft bei {team} endlich das Loch auf {position}.",
+"Auf {position} herrschte Bedarf, {team} reagiert mit {player}.",
+"Problem erkannt, spät genug gelöst. {player} übernimmt bei {team} auf {position}.",
+"Der Kader atmet auf, {player} füllt endlich den Bedarf auf {position}.",
+"Mit {player} repariert {team} seine bislang größte Schwachstelle auf {position}.",
+"Da ist die Verstärkung, die {team} auf {position} dringend gebraucht hat.",
+"Lange ignoriert, jetzt erledigt. {team} holt {player} für {position}.",
+"Pick {pick_number} bringt {team} endlich eine vernünftige Lösung auf {position}.",
+"Wenigstens diese Baustelle ist geschlossen, {player} verstärkt {team} auf {position}.",
+"Jetzt sieht der Kader vollständiger aus, denn {player} besetzt bei {team} die Position {position}."
+],
+"jeremy": [
+"Endlich ist die wichtige Lücke geschlossen! {team} holt {player} und bekommt auf {position} genau die dringend benötigte Verstärkung.",
+"Das dürfte bei {team} für Erleichterung sorgen! Mit {player} ist die bisher offene Position {position} endlich sinnvoll besetzt.",
+"{player} kommt genau zur richtigen Zeit! {team} hatte auf {position} echten Bedarf und findet jetzt eine spannende Lösung.",
+"Auf diesen Moment haben die Fans von {team} gewartet! {player} schließt die große Lücke auf {position} und stabilisiert den Kader.",
+"Jetzt wirkt der Kader deutlich kompletter! {team} reagiert auf den Bedarf und sichert sich {player} für {position}.",
+"Mit Pick {pick_number} kümmert sich {team} endlich um {position}. {player} könnte dort genau die fehlende Verstärkung sein!",
+"Eine wichtige Aufgabe ist erledigt! {player} landet bei {team} und bringt dringend benötigte Qualität auf {position}.",
+"Da dürfte das Draftboard von {team} direkt entspannter aussehen! {player} besetzt endlich die offene Stelle auf {position}.",
+"Für {team} war {position} bislang die große Baustelle. Mit {player} gibt es jetzt endlich eine überzeugende Antwort!",
+"Genau hier musste {team} irgendwann handeln! {player} kommt an Pick {pick_number} und füllt den Bedarf auf {position}.",
+"Die Geduld zahlt sich aus! {team} findet mit {player} eine Lösung für die dringend benötigte Position {position}.",
+"Was für ein wichtiger Schritt für diesen Kader! {player} verstärkt {team} dort, wo auf {position} bisher am meisten gefehlt hat."
+]
+},
+"clock_pressure": {
+"kevin": [
+"Nur noch {seconds} Sekunden für {team}. Jetzt wäre Denken langsam durch Entscheiden zu ersetzen.",
+"Die Uhr kennt keine Gnade, {team} hat noch {seconds} Sekunden.",
+"{team} bleiben {seconds} Sekunden. Hoffentlich existiert irgendwo ein Plan.",
+"Noch {seconds} Sekunden, und bei {team} wird aus Geduld langsam Panik.",
+"Ticktack, {team}. In {seconds} Sekunden hilft auch das schönste Draftboard nichts mehr.",
+"Zeitdruck bei {team}, nur noch {seconds} Sekunden bis zur Entscheidung.",
+"Langsam wird es sportlich, denn {team} hat gerade noch {seconds} Sekunden.",
+"Bei {seconds} Sekunden Restzeit sollte {team} vielleicht einen Namen auswählen.",
+"Entscheidungsfreude sieht anders aus, {team} bleiben nur noch {seconds} Sekunden.",
+"Der Countdown läuft, und {team} hat noch exakt {seconds} Sekunden.",
+"Jetzt zählt jede Sekunde, {team} muss in {seconds} Sekunden liefern.",
+"Viel Bedenkzeit bleibt nicht, für {team} stehen nur noch {seconds} Sekunden auf der Uhr."
+],
+"jeremy": [
+"Nur noch {seconds} Sekunden für {team}! Jetzt wird es spannend, denn die nächste Entscheidung muss wirklich schnell fallen.",
+"Die Uhr läuft unerbittlich weiter! {team} hat noch {seconds} Sekunden, um den passenden Spieler für den Kader zu finden.",
+"{team} bleiben gerade einmal {seconds} Sekunden! Ich bin gespannt, welcher Name in diesem hektischen Moment ausgewählt wird.",
+"Noch {seconds} Sekunden auf der Uhr, und bei {team} steigt der Druck! Hoffentlich liegt der Wunschspieler schon bereit.",
+"Jetzt wird es richtig eng für {team}! Mit nur {seconds} Sekunden bleibt kaum noch Zeit für einen letzten Blick aufs Board.",
+"Ticktack, die Entscheidung rückt näher! {team} hat noch {seconds} Sekunden und muss sich jetzt auf einen Spieler festlegen.",
+"Spannung bis zur letzten Sekunde! Für {team} bleiben noch {seconds} Sekunden, bevor die Auswahl endgültig getroffen werden muss.",
+"Bei {team} dürfte gerade ordentlich Bewegung ins Draftboard kommen! Nur noch {seconds} Sekunden bleiben für diese wichtige Entscheidung.",
+"Der Countdown sorgt für echte Draftspannung! {team} muss innerhalb der nächsten {seconds} Sekunden einen Namen aufrufen.",
+"Viel Zeit zum Grübeln gibt es nicht mehr! {team} hat noch {seconds} Sekunden für eine hoffentlich gute Entscheidung.",
+"Langsam steigt der Puls bei den Fans von {team}! Noch {seconds} Sekunden, dann muss der nächste Pick feststehen.",
+"Was macht {team} jetzt? Mit nur {seconds} Sekunden auf der Uhr brauchen wir gleich eine schnelle und entschlossene Antwort!"
+]
+},
+"first_pick": {
+"kevin": [
+"Los geht es, {team} eröffnet den Draft mit {player} an Pick {pick_number}.",
+"Der erste Name fällt, {player} geht an {team}.",
+"{team} setzt mit {player} sofort den Maßstab für diesen Draft.",
+"Pick {pick_number} gehört {player}. Jetzt darf der Rest der Liga reagieren.",
+"Mit {player} eröffnet {team} das Rennen um den besten Kader.",
+"Keine Überraschung beim Auftakt, {team} sichert sich {player}.",
+"{player} ist der erste Spieler vom Board und landet bei {team}.",
+"Das Warten endet, {team} macht {player} zum ersten Pick.",
+"Erster Pick, erste Ansage. {player} startet seine Fantasy-Saison bei {team}.",
+"Jetzt ist der Draft offiziell eröffnet, {team} entscheidet sich für {player}.",
+"An Pick {pick_number} beginnt alles mit {player} für {team}.",
+"Vorhang auf für {player}, denn {team} eröffnet damit den gesamten Draft."
+],
+"jeremy": [
+"Los geht es endlich! {team} eröffnet den gesamten Draft und entscheidet sich an Pick {pick_number} für {player}.",
+"Der erste Pick ist da! {player} landet bei {team}, und damit beginnt offiziell das Rennen um die beste Mannschaft.",
+"{team} darf den Draft eröffnen und wählt {player}! Jetzt bin ich gespannt, wie die anderen Teams darauf reagieren.",
+"Pick {pick_number} setzt den Startschuss! {player} ist der erste Spieler vom Board und verstärkt ab sofort {team}.",
+"Was für ein schöner Moment zum Auftakt! {team} macht {player} zum ersten Spieler dieses Drafts und setzt direkt ein Zeichen.",
+"Mit {player} beginnt die Draftnacht für {team}! Jetzt haben alle anderen Manager ihren ersten Orientierungspunkt auf dem Board.",
+"Keine Wartezeit mehr, wir sind gestartet! {player} geht als erster Pick zu {team}, und jetzt nimmt der Draft Fahrt auf.",
+"{player} eröffnet diesen Draft und landet bei {team}! Für die Fans beginnt damit endlich die spannende Jagd nach dem besten Kader.",
+"Jetzt ist es offiziell! {team} entscheidet sich zum Auftakt für {player} und gibt damit die Richtung für den Draft vor.",
+"Der Moment ist gekommen! An Pick {pick_number} sichert sich {team} mit {player} den ersten Spieler des gesamten Drafts.",
+"Endlich fällt der erste Name! {player} gehört jetzt zu {team}, und für alle anderen Teams beginnt das große Rechnen.",
+"Vorhang auf für diesen Draft! {team} startet mit {player}, und ich kann es kaum erwarten zu sehen, was als Nächstes passiert."
+]
+},
+"last_pick": {
+"kevin": [
+"Der letzte Pick gehört {player}. {team} macht ihn offiziell zum Mr. Irrelevant.",
+"Ganz hinten findet {team} noch {player}. Vielleicht steckt im Schlusslicht ja doch etwas Value.",
+"{player} beendet den Draft bei {team}. Irgendjemand musste schließlich der Letzte sein.",
+"Mit Pick {pick_number} schnappt sich {team} noch {player}. Feierabend.",
+"Zum Abschluss landet {player} bei {team}. Jetzt kann wirklich niemand mehr overthinken.",
+"Mr. Irrelevant heißt diesmal {player}. {team} setzt den Schlusspunkt.",
+"Am Ende des Boards wartet {player}, und {team} nimmt ihn tatsächlich noch mit.",
+"Schlusslicht {player} geht zu {team}. Von hier aus kann der Pick nur überraschen.",
+"Den letzten Namen liefert {team} mit {player}. Der Draft ist damit offiziell Geschichte.",
+"Finale bei Pick {pick_number}: {team} entscheidet sich für {player}.",
+"Übrig bleibt {player}, und {team} macht daraus den letzten Pick des Drafts.",
+"Das war es. {player} schließt für {team} diesen Draft endgültig ab."
+],
+"jeremy": [
+"Da ist der letzte Pick des Drafts! {team} entscheidet sich für {player}, und vielleicht steckt hier noch eine echte Überraschung.",
+"Zum Abschluss bekommt {player} seinen großen Moment! {team} macht ihn an Pick {pick_number} zum letzten Spieler des Drafts.",
+"{player} beendet diesen Draft bei {team}! Auch der letzte Pick kann am Ende noch richtig wertvoll für einen Kader werden.",
+"Mit Pick {pick_number} ist der Draft komplett! {team} holt {player}, und jetzt beginnt das Warten auf die Fantasy-Saison.",
+"Mr. Irrelevant steht fest! {player} geht zu {team}, aber vielleicht lachen wir über diesen Namen später noch ganz anders.",
+"Ganz zum Schluss findet {team} noch {player}! Genau solche späten Picks können eine besonders schöne Draftgeschichte schreiben.",
+"Der letzte Name ist vom Board! {player} landet bei {team} und bekommt damit den perfekten Schlusspunkt dieses Drafts.",
+"Was für ein langer Draft, und jetzt ist er komplett! {team} beendet ihn mit {player} an Pick {pick_number}.",
+"Auch der letzte Pick verdient seinen Moment! {player} verstärkt {team}, und vielleicht wartet hier noch ein kleiner Volltreffer.",
+"Jetzt können alle durchatmen! {team} nimmt zum Abschluss {player} und beendet damit offiziell diesen gesamten Draft.",
+"Am Ende bekommt {player} noch seinen Platz! {team} greift zu und macht den letzten Pick vielleicht spannender als erwartet.",
+"Finale geschafft! {player} geht als letzter Spieler zu {team}, und damit stehen endlich alle Kader für die Saison."
+]
+},
+"rivalry_pick": {
+"kevin": [
+"{team} nimmt {player} direkt vor {rival}. Das dürfte dort hervorragend ankommen.",
+"Ausgerechnet {player} landet bei {team}. {rival} darf freundlich applaudieren.",
+"Vor {rival} schlägt {team} mit {player} zu. Rivalitäten brauchen schließlich neues Material.",
+"{player} verschärft die Rivalität, denn {team} schnappt ihn {rival} vor der Nase weg.",
+"Dieser Pick schmeckt doppelt gut für {team}. {player} geht nicht zu {rival}.",
+"Pick {pick_number} bringt {player} zu {team}. Bei {rival} dürfte man genau hinschauen.",
+"Da setzt {team} gegen {rival} ein Zeichen und nimmt {player}.",
+"Rivalität belebt den Draft. {team} liefert mit {player} direkt neuen Gesprächsstoff.",
+"Für {rival} ist dieser Pick unangenehm, denn {player} gehört jetzt {team}.",
+"Noch bevor {rival} reagieren kann, sichert sich {team} den Spieler {player}.",
+"Perfektes Timing für etwas Stichelei. {team} holt {player} vor {rival}.",
+"Zwischen {team} und {rival} wird es interessanter. {player} liefert den nächsten Zündstoff."
+],
+"jeremy": [
+"Das bringt direkt Würze in die Rivalität! {team} sichert sich {player}, und bei {rival} wird dieser Pick sicher genau beobachtet.",
+"Ausgerechnet vor {rival} schlägt {team} zu! {player} könnte diesem Duell in der kommenden Saison zusätzliche Spannung geben.",
+"{player} landet bei {team}, und damit gibt es sofort neuen Gesprächsstoff zwischen den Rivalen! {rival} wird sich diesen Pick merken.",
+"Vor dem Rivalen einen Wunschspieler zu bekommen, fühlt sich besonders gut an! {team} holt {player} direkt vor {rival}.",
+"Jetzt bekommt diese Draftnacht noch mehr Spannung! {team} entscheidet sich für {player}, während {rival} nur zuschauen kann.",
+"Mit Pick {pick_number} setzt {team} ein kleines Zeichen gegen {rival}! {player} macht dieses Rivalenduell direkt noch interessanter.",
+"Da werden die Fans von {team} besonders laut! {player} kommt ins eigene Team und eben nicht zu {rival}.",
+"Rivalitäten machen Fantasy Football einfach besser! {team} sichert sich {player}, und {rival} bekommt direkt einen neuen Grund zur Motivation.",
+"Für {team} könnte dieser Pick doppelt Freude bringen! {player} verstärkt den Kader und landet gleichzeitig nicht bei {rival}.",
+"Das nächste Kapitel dieser Rivalität beginnt schon im Draft! {team} holt {player} und legt damit gegen {rival} vor.",
+"Bei diesem Pick dürfte {rival} besonders aufmerksam geworden sein! {team} entscheidet sich für {player} und erhöht damit die Spannung.",
+"Ein bisschen Rivalität gehört einfach dazu! {player} geht zu {team}, und das nächste Duell mit {rival} bekommt sofort mehr Bedeutung."
+]
+},
+"surprise_pick": {
+"kevin": [
+"Damit hat niemand gerechnet. {team} zieht plötzlich {player} aus dem Hut.",
+"{player} an Pick {pick_number}? {team} sorgt wenigstens zuverlässig für Unterhaltung.",
+"Aus dem Nichts nimmt {team} den Spieler {player}. Das Board braucht kurz Verarbeitungspause.",
+"Überraschung des Abends: {player} geht tatsächlich zu {team}.",
+"Diesen Namen hatte kaum jemand bereit. {team} offenbar schon.",
+"Pick {pick_number} liefert den Plot Twist. {team} entscheidet sich für {player}.",
+"Plötzlich steht {player} auf der Bühne. {team} ignoriert sämtliche Erwartungen.",
+"Niemand sah {player} kommen, außer offenbar das Draftzimmer von {team}.",
+"Da verlässt {team} mit {player} endgültig die vorhersehbare Route.",
+"Unerwarteter geht es kaum. {player} landet überraschend bei {team}.",
+"Das Draftboard bekommt einen Schock. {team} nimmt ausgerechnet {player}.",
+"Wer {player} vorhergesagt hat, darf sich melden. {team} überrascht hier wirklich alle."
+],
+"jeremy": [
+"Wow, damit habe ich wirklich nicht gerechnet! {team} entscheidet sich für {player} und liefert einen der überraschendsten Picks des Drafts.",
+"{player} kommt plötzlich vom Board! {team} hatte offenbar einen ganz eigenen Plan, und genau solche Momente machen Drafts so spannend.",
+"Das ist eine echte Überraschung von {team}! {player} war kaum im Gespräch, bekommt jetzt aber eine große Chance.",
+"Aus dem Nichts hören wir den Namen {player}! Ich bin unglaublich gespannt, was {team} bei diesem Spieler entdeckt hat.",
+"Damit dürfte {team} einige Draftboards durcheinanderbringen! {player} geht an Pick {pick_number} deutlich überraschender vom Board als erwartet.",
+"Was für ein unerwarteter Moment! {team} vertraut auf {player}, und jetzt möchte ich unbedingt wissen, wie dieser Plan aufgeht.",
+"Niemand hatte {player} hier wirklich auf dem Radar! {team} sorgt damit für frischen Gesprächsstoff und jede Menge Spannung.",
+"Pick {pick_number} bringt uns eine echte Überraschung! {team} nimmt {player} und folgt damit ganz klar dem eigenen Draftboard.",
+"Jetzt wird es interessant! {player} landet bei {team}, obwohl diesen Namen wahrscheinlich nur wenige Manager so früh erwartet hatten.",
+"Solche Picks liebe ich an einem Draft! {team} überrascht alle mit {player} und setzt voll auf die eigene Einschätzung.",
+"Da müssen einige Manager kurz ihre Listen prüfen! {player} geht überraschend zu {team}, und ich bin gespannt auf die Reaktionen.",
+"Eine echte Überraschung kann einen Draft komplett verändern! {team} entscheidet sich für {player} und bringt plötzlich neue Dynamik hinein."
+]
+},
+"star_player": {
+"kevin": [
+"Da ist der Superstar. {team} sichert sich mit {player} echte Eliteklasse.",
+"{player} landet bei {team}. Für diesen Pick braucht es keine komplizierte Analyse.",
+"Elite vom Board. {team} bekommt mit {player} einen erwarteten Eckpfeiler.",
+"Mit {player} holt {team} einen der sichersten Stars dieses Drafts.",
+"Pick {pick_number} bringt {team} den Spieler {player}. Schwer, daran herumzunörgeln.",
+"Großer Name, große Erwartungen. {player} übernimmt bei {team} sofort die Hauptrolle.",
+"{team} greift zur Premiumlösung und nimmt {player}. Überraschend vernünftig.",
+"Auf {position} ist {player} Elite. {team} musste hier nicht lange philosophieren.",
+"Ein echter Unterschiedsspieler geht vom Board. {player} gehört jetzt {team}.",
+"Da verschwindet Topklasse. {team} sichert sich {player} an Pick {pick_number}.",
+"Bei {player} spricht der ADP-Wert von {adp} für sich. {team} greift zu.",
+"Keine Experimente nötig. {player} bringt {team} sofort Starpower auf {position}."
+],
+"jeremy": [
+"Da ist einer der großen Namen dieses Drafts! {team} sichert sich {player} und bekommt sofort einen echten Star für den Kader.",
+"{player} gehört jetzt zu {team}! Bei einem ADP-Wert von {adp} sind die Erwartungen natürlich riesig, und völlig zu Recht.",
+"Was für ein starker Baustein für {team}! {player} zählt zur Elite auf {position} und kann diesen Kader sofort prägen.",
+"Mit {player} kommt echte Starpower ins Team! {team} darf sich über einen der begehrtesten Spieler des gesamten Drafts freuen.",
+"Pick {pick_number} bringt einen echten Unterschiedsspieler! {player} landet bei {team} und dürfte sofort eine zentrale Rolle übernehmen.",
+"Jetzt geht ein absoluter Topspieler vom Board! {team} entscheidet sich für {player}, und die Fans dürfen sich richtig freuen.",
+"Auf {position} gehört {player} zur absoluten Spitze! Für {team} ist das ein fantastischer Grundstein für den weiteren Draft.",
+"Großer Name und große Erwartungen! {player} verstärkt {team}, und genau solche Spieler können eine Fantasy-Saison entscheidend prägen.",
+"Da bekommt {team} richtig viel Qualität! {player} zählt zu den Stars dieses Drafts und bringt enormes Potenzial mit.",
+"Ein Spieler dieser Klasse verändert sofort den Kader! {team} holt {player} und setzt damit ein starkes Zeichen.",
+"Die erwartete Position von {adp} zeigt schon die Qualität! {player} geht zu {team} und bringt echte Eliteklasse auf {position}.",
+"Für solche Momente liebt man den Draft! {team} sichert sich mit {player} einen Star, auf den sich die Fans freuen können."
+]
+}
+}
