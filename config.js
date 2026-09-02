@@ -4,10 +4,10 @@
 
 const CONFIG = {
   // Sleeper Draft-ID (findest du in der URL deines Drafts auf sleeper.com)
-  draftId: "DEINE_DRAFT_ID",
+  draftId: "1400806422643490816",
 
   // Sleeper League-ID (für Teamnamen/Owner) – optional, aber empfohlen
-  leagueId: "DEINE_LEAGUE_ID",
+  leagueId: "1389695005928464384",
 
   // Wie oft wird bei Sleeper nach neuen Picks gefragt (Millisekunden)
   pollIntervalMs: 4000,
