@@ -4,7 +4,7 @@
 
 const CONFIG = {
   // Sleeper Draft-ID (findest du in der URL deines Drafts auf sleeper.com)
-  draftId: "1400806422643490816",
+  draftId: "1400816117244563456",
 
   // Sleeper League-ID (für Teamnamen/Owner) – optional, aber empfohlen
   leagueId: "1389695005928464384",
